@@ -11,12 +11,15 @@ int main(void)
 
 	for (a = 1; a < 90; a++)
 	{
-		putchar((a / 10) + '0');
-		putchar((a % 10) + '0');
-		if (a != 89)
+		if ((a / 10) != (a % 10))
 		{
-			putchar(',');
-			putchar(' ');
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
+			if (a != 89)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
