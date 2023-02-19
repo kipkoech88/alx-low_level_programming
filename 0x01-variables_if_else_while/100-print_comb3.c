@@ -11,7 +11,7 @@ int main(void)
 
 	for (a = 1; a < 90; a++)
 	{
-		if ((a / 10) != (a % 10))
+		if ((a / 10) != (a % 10) && ((a % 10) != 0))
 		{
 			putchar((a / 10) + '0');
 			putchar((a % 10) + '0');
