@@ -9,13 +9,15 @@ int main(void)
 {
 	int a;
 
-	for (a = '0'; a <= '9'; a++)
+	for (a = 0; a < 90; a++)
 	{
-		putchar(a);
-		if (a == 9)
-			continue;
-		putchar(',');
-		putchar(' ');
+		putchar((a / 10) + '0');
+		putchar((a % 10) + '0');
+		if ( a != 89)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);
