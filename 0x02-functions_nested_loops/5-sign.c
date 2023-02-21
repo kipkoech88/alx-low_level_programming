@@ -4,8 +4,6 @@
  * print_sign - prints the sign of a number
  *@n: number to be checked
  * Return: 1 if n is greater than 0
- *	0 if n is 0
- *	-1 if n is negative
  */
 
 int print_sign(int n)
