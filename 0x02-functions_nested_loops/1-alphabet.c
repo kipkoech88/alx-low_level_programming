@@ -16,3 +16,14 @@ void print_alphabet(void)
 	}
 	_putchar('\n');
 }
+
+/**
+ * main -Entry point
+ * Return: 0 success
+ */
+
+int main(void)
+{
+	print_alphabet();
+	return (0);
+}
