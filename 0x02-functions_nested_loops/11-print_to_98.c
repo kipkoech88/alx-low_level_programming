@@ -3,6 +3,7 @@
 
 /**
  * print_to_98 - print inputed number to 98
+ * @n: number to start from
  *
  * Return: 0 (success)
  */
@@ -25,7 +26,7 @@ void print_to_98(int n)
 	}
 	else if (n == 98)
 	{
-		printf("%d", n);
+		printf("%d\n", n);
 	}
 	else if (n > 98)
 	{
