@@ -9,9 +9,11 @@
 
 void print_to_98(int n)
 {
+	int a;
+
 	if (n < 98)
 	{
-		for (int a = n; a <= 98; a++)
+		for (a = n; a <= 98; a++)
 		{
 			if (a != 98)
 			{
@@ -27,7 +29,7 @@ void print_to_98(int n)
 	}
 	else if (n > 98)
 	{
-		for (int a = n; a >= 98; a--)
+		for (a = n; a >= 98; a--)
 		{
 			if (a != 98)
 			{
@@ -37,13 +39,4 @@ void print_to_98(int n)
 				printf("%d\n", a);
 		}
 	}
-}
-int main(void)
-{
-	print_to_98(0);
-	_putchar('\n');
-	print_to_98(106);
-	print_to_98(-98);
-
-	return (0);
 }
