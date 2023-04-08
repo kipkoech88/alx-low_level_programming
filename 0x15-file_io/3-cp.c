@@ -16,7 +16,7 @@ int main(int c, char *argv[])
 	int r, w, o;
 	char *buffer[1024];
 
-	if (c < 3)
+	if (c != 3)
 	{
 		perror("Usage: cp file_from file_to");
 		exit(97);
@@ -28,7 +28,7 @@ int main(int c, char *argv[])
 		perror("Error: Can't read from file ");
 		exit(98);
 	}
-	w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0665);
 	if (w == -1)
 	{
 		perror("Error: Can't write to NAME_OF_THE_FILE");
