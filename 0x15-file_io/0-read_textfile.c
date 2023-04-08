@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdio.h>
+#include <fcntl.h>
 
 /**
  * read_textfile - reads text from a file
@@ -12,26 +13,26 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	char *line = NULL;
+	char *buffer;
+	ssize_t r, w, o;
 
-
-	file = fopen(filename, "r");
-	if (file == NULL)
+	if (filename == NULL)
 	{
-		perror("fopen");
 		return (0);
 	}
+	buffer = malloc(sizeof(char) * letters);
 
-	while ((getline(&line, &letters, file) != -1))
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+
+	if (o == -1 || r == -1 || w == -1)
 	{
-		printf("%s", line);
+		free(buffer);
+		return (0);
 	}
+	free(buffer);
+	close(o);
 
-	fclose(file);
-	if (line)
-		free(line);
-
-
-	return (0);
+	return (w);
 }
