@@ -13,24 +13,22 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	FILE *file;
-	ssize_t ret;
-	int count;
+	int o, w, len = 0;
 
-	count = sizeof(text_content);
 	if (filename == NULL)
 		return (-1);
-
-
-	file = open(filename, O_RDONLY | O_CREAT | O_WRONLY);
-	if (file != NULL)
-		return (1);
 	if (text_content != NULL)
 	{
-		ret = write(file, text_content, count);
-		return (ret);
+		for (len = 0; text_content[len];)
+			len++;
 	}
-	else
+
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
 		return (-1);
-	fclose(file);
+	close(o);
+
+	return (1);
 }
