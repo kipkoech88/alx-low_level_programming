@@ -13,6 +13,7 @@
 
 int main(int c, char *argv[])
 {
+	mode_t file_perm;
 	int r, w, o;
 	char *buffer[1024];
 
@@ -28,7 +29,9 @@ int main(int c, char *argv[])
 		perror("Error: Can't read from file ");
 		exit(98);
 	}
-	w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0665);
+	file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+
+	w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, file_perm);
 	if (w == -1)
 	{
 		perror("Error: Can't write to NAME_OF_THE_FILE");
