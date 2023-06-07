@@ -9,7 +9,7 @@
 
 int root(int p, int x)
 {
-	if (x *x == p)
+	if ((x * x) == p)
 		return (x);
 	if (x == (p / 2))
 		return (-1);
