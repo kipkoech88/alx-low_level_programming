@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _puts_recursion - Prints 
+ * _puts_recursion - Prints
  * s: character pointer
  * @s:ptr to the string
  * Return: nothing
