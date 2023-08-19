@@ -1,1 +1,2 @@
-#Working on Low level Language C
+# The C programming language
+Understanding C programming language, OS and Unix
